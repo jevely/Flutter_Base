@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/baseview.dart';
+import 'package:flutter_base/canscrollview.dart';
 import 'package:flutter_base/container.dart';
 import 'package:flutter_base/layout.dart';
 import 'package:flutter_base/materialview.dart';
@@ -70,10 +71,21 @@ class MainView extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         new MaterialPageRoute(builder: (context) {
-                          return new MaterialBodyView();
-                        }));
+                      return new MaterialBodyView();
+                    }));
                   },
                   child: new Text("Material")),
+            ),
+            new Container(
+              padding: EdgeInsets.only(left: 16),
+              child: new FlatButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder: (context) {
+                      return new CanScrollView();
+                    }));
+                  },
+                  child: new Text("可滑动控件")),
             ),
           ],
         ));
