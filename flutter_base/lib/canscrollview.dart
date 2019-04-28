@@ -67,6 +67,50 @@ class CanScrollView extends StatelessWidget {
                   },
                   child: new Text("ListView4")),
             ),
+            new Container(
+              padding: EdgeInsets.only(left: 16),
+              child: new FlatButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder: (context) {
+                      return new GridViewDemo();
+                    }));
+                  },
+                  child: new Text("GridViewDemo")),
+            ),
+            new Container(
+              padding: EdgeInsets.only(left: 16),
+              child: new FlatButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder: (context) {
+                      return new GridViewDemo2();
+                    }));
+                  },
+                  child: new Text("GridViewDemo2")),
+            ),
+            new Container(
+              padding: EdgeInsets.only(left: 16),
+              child: new FlatButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder: (context) {
+                      return new GridViewDemo3();
+                    }));
+                  },
+                  child: new Text("GridViewDemo3")),
+            ),
+            new Container(
+              padding: EdgeInsets.only(left: 16),
+              child: new FlatButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder: (context) {
+                      return new GridViewDemo4();
+                    }));
+                  },
+                  child: new Text("GridViewDemo4")),
+            ),
           ],
         ));
   }
@@ -275,6 +319,106 @@ class NoMoreView extends StatelessWidget {
         child: Text(
           "没有更多了",
           style: TextStyle(color: Colors.grey),
+        ));
+  }
+}
+
+class GridViewDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Scaffold(
+        appBar: AppBar(
+          title: Text("GridViewDemo"),
+        ),
+        body: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 30,
+              childAspectRatio: 1),
+          children: <Widget>[
+            new Icon(Icons.ac_unit),
+            new Icon(Icons.star_border),
+            new Icon(Icons.keyboard),
+            new Icon(Icons.star),
+            new Icon(Icons.router),
+            new Icon(Icons.access_alarm),
+            new Icon(Icons.account_balance),
+          ],
+        ));
+  }
+}
+
+class GridViewDemo2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Scaffold(
+        appBar: AppBar(
+          title: Text("GridViewDemo2"),
+        ),
+        body: GridView.count(
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 2,
+          crossAxisCount: 4,
+          children: <Widget>[
+            new Icon(Icons.ac_unit),
+            new Icon(Icons.star_border),
+            new Icon(Icons.keyboard),
+            new Icon(Icons.star),
+            new Icon(Icons.router),
+            new Icon(Icons.access_alarm),
+            new Icon(Icons.account_balance),
+          ],
+        ));
+  }
+}
+
+class GridViewDemo3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Scaffold(
+        appBar: AppBar(
+          title: Text("GridViewDemo3"),
+        ),
+        body: GridView(
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 120, childAspectRatio: 2),
+          children: <Widget>[
+            new Icon(Icons.ac_unit),
+            new Icon(Icons.star_border),
+            new Icon(Icons.keyboard),
+            new Icon(Icons.star),
+            new Icon(Icons.router),
+            new Icon(Icons.access_alarm),
+            new Icon(Icons.account_balance),
+          ],
+        ));
+  }
+}
+
+class GridViewDemo4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Scaffold(
+        appBar: AppBar(
+          title: Text("GridViewDemo4"),
+        ),
+        body: GridView.extent(
+          maxCrossAxisExtent: 120,
+          childAspectRatio: 2,
+          children: <Widget>[
+            new Icon(Icons.ac_unit),
+            new Icon(Icons.star_border),
+            new Icon(Icons.keyboard),
+            new Icon(Icons.star),
+            new Icon(Icons.router),
+            new Icon(Icons.access_alarm),
+            new Icon(Icons.account_balance),
+          ],
         ));
   }
 }
